@@ -2,18 +2,160 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ActivityMain">
 
     <TextView
+        android:id="@+id/main_text1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:text="번호"
+        android:inputType="number"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/main_edit_num"
+        android:layout_width="45dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/radius_5_stroke_black"
+        android:ems="10"
+        android:hint="번호"
+        android:inputType="text"
+        android:paddingStart="5dp"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/main_text1"
+        app:layout_constraintStart_toEndOf="@+id/main_text1"
+        app:layout_constraintTop_toTopOf="@+id/main_text1" />
+
+    <TextView
+        android:id="@+id/main_text2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="정답"
+        app:layout_constraintStart_toStartOf="@+id/main_text1"
+        app:layout_constraintTop_toBottomOf="@+id/main_text1" />
+
+    <EditText
+        android:id="@+id/main_edit_answer"
+        android:layout_width="80dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/radius_5_stroke_black"
+        android:ems="10"
+        android:hint="정답"
+        android:inputType="text"
+        android:paddingStart="5dp"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/main_edit_num"
+        app:layout_constraintTop_toBottomOf="@+id/main_edit_num" />
+
+    <Button
+        android:id="@+id/main_btn_img"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/radius_5_stroke_black"
+        android:text="이미지"
+        app:layout_constraintStart_toStartOf="@+id/main_text2"
+        app:layout_constraintTop_toBottomOf="@+id/main_edit_answer" />
+
+    <ImageView
+        android:id="@+id/main_img"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/main_edit_answer"
+        app:layout_constraintTop_toTopOf="@+id/main_edit_num"
+        app:srcCompat="@drawable/radius_5_stroke_black" />
+
+    <Button
+        android:id="@+id/main_btn_start"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/radius_5_stroke_black"
+        android:text="시작"
+        app:layout_constraintBottom_toBottomOf="@+id/main_edit_end"
+        app:layout_constraintStart_toEndOf="@+id/main_edit_end"
+        app:layout_constraintTop_toTopOf="@+id/main_edit_end" />
+
+    <EditText
+        android:id="@+id/main_edit_start"
+        android:layout_width="40dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/radius_5_stroke_black"
+        android:ems="10"
+        android:hint="시작"
+        android:inputType="number"
+        android:paddingStart="5dp"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/main_text3"
+        app:layout_constraintStart_toEndOf="@+id/main_text3"
+        app:layout_constraintTop_toTopOf="@+id/main_text3" />
+
+    <TextView
+        android:id="@+id/main_text3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="100dp"
+        android:text="시작"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_img" />
+
+    <TextView
+        android:id="@+id/main_text4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="1dp"
+        android:text="끝"
+        app:layout_constraintBottom_toBottomOf="@+id/main_edit_start"
+        app:layout_constraintStart_toEndOf="@+id/main_edit_start"
+        app:layout_constraintTop_toTopOf="@+id/main_edit_start" />
+
+    <EditText
+        android:id="@+id/main_edit_end"
+        android:layout_width="40dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/radius_5_stroke_black"
+        android:ems="10"
+        android:hint="끝"
+        android:inputType="number"
+        android:paddingStart="5dp"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/main_text4"
+        app:layout_constraintStart_toEndOf="@+id/main_text4"
+        app:layout_constraintTop_toTopOf="@+id/main_text4" />
+
+    <Button
+        android:id="@+id/main_btn_start_all"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/radius_5_stroke_black"
+        android:text="전체 문제"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_btn_start" />
+
+    <Button
+        android:id="@+id/main_btn_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/radius_5_stroke_black"
+        android:text="저장"
+        app:layout_constraintEnd_toStartOf="@+id/main_img"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_btn_img" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

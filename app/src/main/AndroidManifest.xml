@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Vcp_exam"
         tools:targetApi="31">
         <activity
+            android:name=".ActivityExam"
+            android:exported="false" />
+        <activity
             android:name=".ActivityMain"
             android:exported="false" />
         <activity
