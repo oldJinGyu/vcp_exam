@@ -91,6 +91,8 @@ class ActivityMain : AppCompatActivity() {
                 Toast.makeText(this, "입력해",Toast.LENGTH_SHORT).show()
             }else{
                 databaseInfo.insertData(editNum.text.toString(), imgByteArray, editAnswer.text.toString().uppercase())
+                editNum.text.clear()
+                editAnswer.text.clear()
                 Toast.makeText(this, "저장 완료",Toast.LENGTH_SHORT).show()
             }
         }
@@ -100,9 +102,17 @@ class ActivityMain : AppCompatActivity() {
                 Toast.makeText(this, "입력해",Toast.LENGTH_SHORT).show()
             }else{
                 val intent = Intent(this, ActivityExam::class.java)
+                intent.putExtra("type", false)
                 intent.putExtra("start", editStart.text.toString())
                 intent.putExtra("end", editEnd.text.toString())
+                startActivity(intent)
             }
+        }
+
+        btnStartAll.setOnClickListener {
+            val intent = Intent(this, ActivityExam::class.java)
+            intent.putExtra("type", true)
+            startActivity(intent)
         }
     }
 }
