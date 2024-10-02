@@ -106,6 +106,7 @@ class ActivityMain : AppCompatActivity() {
                 intent.putExtra("start", editStart.text.toString())
                 intent.putExtra("end", editEnd.text.toString())
                 startActivity(intent)
+                finish()
             }
         }
 
@@ -113,6 +114,7 @@ class ActivityMain : AppCompatActivity() {
             val intent = Intent(this, ActivityExam::class.java)
             intent.putExtra("type", true)
             startActivity(intent)
+            finish()
         }
     }
 }
